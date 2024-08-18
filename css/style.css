@@ -1410,6 +1410,8 @@ img :after{
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+/* Outer Container */
+/* Outer Container */
 .text-blk {
   margin-top: 0px;
   margin-right: 10px;
@@ -1425,16 +1427,11 @@ img :after{
 }
 
 .responsive-container-block {
-  min-height: 40px;
-  height: fit-content;
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: 0px;
   justify-content: space-evenly;
+  padding: 20px; /* Add even padding */
+  gap: 20px; /* Ensure even spacing between cards */
 }
 
 .outer-container {
@@ -1447,13 +1444,25 @@ img :after{
 }
 
 .inner-container {
-  max-width: 80%;
+  max-width: 90%;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
   margin-right: 10px;
   margin-bottom: 50px;
   margin-left: 10px;
+}
+.team-year{
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 12px 25px;
+  margin: 0;
+  background: #e7f1fd;
+  color: #106eea;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
 }
 
 .section-head-text {
@@ -1469,64 +1478,119 @@ img :after{
 }
 
 .section-subhead-text {
-  font-size: 25px;
+  font-size: 24px;
   color: rgb(153, 153, 153);
   line-height: 35px;
-  max-width: 1200px;
+  max-width: 1500px;
   text-align: center;
   margin-top: 0px;
   margin-right: 0px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   margin-left: 0px;
 }
 
+
+
+/* Image Wrapper */
 .img-wrapper {
-  width: 150px;
+  width: 160px;
+  height: 200px;
+  border-radius: 100%; /* Circular frame */
+  overflow: hidden;
+  margin-bottom: 15px;
+  position: relative; /* For positioning the LinkedIn icon */
 }
 
-.team-card {
-  display: flex;
-  flex-direction: column;
-  content: initial;
-}
-
-.name {
-  font-size: 25px;
-  font-weight: 700;
-  color: rgb(102, 102, 102);
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 5px;
-  margin-left: 0px;
-}
-
-.position {
-  font-size: 20px;
-  font-weight: 700;
-  color:  #106eea;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 5px;
-  margin-left: 0px;
-}
-
+/* Team Image */
 .team-img {
   width: 100%;
   height: 100%;
+  object-fit: cover; /* Ensure the image fills the container properly */
+  transition: filter 0.4s ease-in-out; /* Smooth transition for blur effect */
 }
 
-.team-card-container {
+/* Team Card */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 200px;
-  margin: 0 0 40px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Make the card slightly rounded */
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
+.team-card:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+/* Name */
+.name {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(102, 102, 102);
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Position */
+.position {
+  font-size: 16px;
+  font-weight: 500;
+  color: #106eea;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Hover Effect */
+.img-wrapper:hover .team-img {
+  filter: blur(5px); /* Blur only the image */
+}
+
+.img-wrapper:hover .linkedin-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Quick appear and smooth transition */
+}
+
+/* LinkedIn Icon */
+.linkedin-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(-20px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
+  width: 40px; /* Adjust size as needed */
+  height: 40px;
+  background-image: url('path_to_linkedin_icon'); /* Replace with the actual path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none; /* Ensures clicking the icon doesn't affect the hover state */
+}
+
+/* Responsive Adjustments */
 @media (max-width: 500px) {
-  .outer-container {
-    padding: 5px 20px 5px 20px;
+  .team-card {
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .section-head-text {
-    text-align: center;
+  .img-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .position {
+    font-size: 14px;
   }
 }
 
@@ -1667,6 +1731,35 @@ img :after{
   }
 }
 
+.inner-page .container {
+  text-align: center;   /* Horizontally centers the h2 */
+}
+
+.team-year {
+  display: inline-block; /* Ensures that the h2 is treated as a block-level element for centering */
+}
+
+.row-sponsor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center-align the icon boxes horizontally */
+  gap: 150px; /* Optional: add spacing between the icon boxes */
+}
+
+.col-lg-, .col-md- {
+  display: flex;
+  justify-content: center; 
+  /* Center-align the content inside each column */
+}
+.icon-box {
+  flex-grow: 1; /* Allows the icon-box to grow and fill the space evenly */
+  max-width: 300px; /* Optional: Set a max width for the icon boxes */
+  text-align: center; /* Center-align text inside the icon box */
+}
+
+.icon-box img {
+  margin-bottom: 15px; /* Adds some space below the image */
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -1847,4 +1940,4 @@ img :after{
     padding: 2px 0;
   }
 }
-  
+  /* ........sponsors....... */  
