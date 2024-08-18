@@ -1412,34 +1412,26 @@ img :after{
 --------------------------------------------------------------*/
 /* Outer Container */
 /* Outer Container */
-.text-blk {
-  margin-top: 0px;
-  margin-right: 10px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  line-height: 25px;
-  float: left;
-  display:flex;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.responsive-cell-block {
-  min-height: 50px;
-}
-
+/* Container Blocks */
 .responsive-container-block {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 20px; /* Add even padding */
-  gap: 20px; /* Ensure even spacing between cards */
+  padding: 20px;
+  gap: 20px;
 }
 
 .outer-container {
-  padding-top: 5px;
-  padding-right: 15px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  background-color: rgb(244, 252, 255);
+  padding: 5px 20px 10px 20px;
+  background-color: #f4fcff;
+  display: flex;
   align-items: center;
 }
 
@@ -1447,55 +1439,52 @@ img :after{
   max-width: 90%;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 50px;
-  margin-left: 10px;
+  margin: 10px;
 }
-.team-year{
+
+/* Text Blocks */
+.text-blk {
+  margin: 0 10px 0 0;
+  line-height: 25px;
+  display: flex;
+}
+
+/* Headers */
+.team-year {
   font-size: 30px;
   letter-spacing: 1px;
   font-weight: 700;
   padding: 12px 25px;
-  margin: 0;
   background: #e7f1fd;
   color: #106eea;
   display: inline-block;
   text-transform: uppercase;
   border-radius: 50px;
+  text-align: center;
 }
 
 .section-head-text {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 5px;
-  margin-left: 0px;
   font-size: 35px;
   font-weight: 700;
   line-height: 48px;
   color: #106eea;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
 }
 
 .section-subhead-text {
   font-size: 24px;
-  color: rgb(153, 153, 153);
+  color: #999;
   line-height: 35px;
   max-width: 1500px;
   text-align: center;
-  margin-top: 0px;
-  margin-right: 0px;
   margin-bottom: 20px;
-  margin-left: 0px;
 }
-
-
 
 /* Image Wrapper */
 .img-wrapper {
   width: 160px;
   height: 200px;
-  border-radius: 100%; /* Circular frame */
+  border-radius: 50%; /* Circular frame */
   overflow: hidden;
   margin-bottom: 15px;
   position: relative; /* For positioning the LinkedIn icon */
@@ -1505,7 +1494,7 @@ img :after{
 .team-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image fills the container properly */
+  object-fit: cover;
   transition: filter 0.4s ease-in-out; /* Smooth transition for blur effect */
 }
 
@@ -1517,25 +1506,26 @@ img :after{
   width: 200px;
   padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 10px; /* Make the card slightly rounded */
-  position: relative;
-  overflow: hidden;
-  background-color: white;
+  border-radius: 10px;
+  background-color: #fff;
   transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+  overflow: hidden;
 }
 
 .team-card:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
 }
 
 /* Name */
 .name {
   font-size: 20px;
   font-weight: 700;
-  color: rgb(102, 102, 102);
+  color: #666;
   text-align: center;
   margin-bottom: 5px;
 }
+
 
 /* Position */
 .position {
@@ -1743,7 +1733,7 @@ img :after{
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center-align the icon boxes horizontally */
-  gap: 150px; /* Optional: add spacing between the icon boxes */
+  gap: 100px; /* Optional: add spacing between the icon boxes */
 }
 
 .col-lg-, .col-md- {
