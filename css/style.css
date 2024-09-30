@@ -631,7 +631,7 @@ section {
 }
 
 .section-title h2 {
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 1px;
   font-weight: 700;
   padding: 12px 25px;
@@ -673,11 +673,12 @@ transform: translateX(100%);
   color: #106eea;
 }
 
-.section-title p {
+.aero-about p {
+  font-size: 20px;
   margin: 15px auto 0 auto;
+  padding-bottom: 4%;
   font-weight: 600;
 }
-
 @media (min-width: 1024px) {
   .section-title p {
     width: 50%;
@@ -771,6 +772,8 @@ transform: translateX(100%);
   border-radius: 0px;
 }
 
+
+
 .featured-services .icon {
   margin-bottom: 15px;
 }
@@ -806,10 +809,61 @@ transform: translateX(100%);
 .featured-services .icon-box:hover .icon i {
   color: #fff;
 }
+.departments-row {
+  display: flex; /* Use Flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line if needed */
+  justify-content: space-evenly; /* Distribute space evenly between items */
+  margin: 20px 0; /* Adds vertical spacing */
+  align-items: center;
+}
 
+.departments-sections {
+   /* Each card takes approximately 1/3 of the row minus margins */
+  box-sizing: border-box; /* Include padding and margin in width calculation */
+  margin: 10px; /* Adds space between the cards */
+  display: flex; /* Make the section a flex container */
+  flex-direction: column; /* Align children vertically */
+}
 
+.icon-box {
+  display: flex; /* Flexbox for the icon box */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+}
+
+.department-img {
+  width: 100%;
+  max-width: 250px; /* Adjusts to screen size */
+  height: auto;
+  display: block;
+  margin: 0 auto 15px; /* Center the image with margin */
+}
+
+@media (max-width: 768px) {
+  .departments-sections {
+    flex: 1 1 calc(50% - 20px); /* Adjust to 2 items per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .departments-row{
+    display: flex; /* Flexbox for the icon box */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+  }
+  .departments-sections {
+    flex: 1 1 100%;
+     /* Stack items in a single column */
+  }
+
+  .department-img {
+    max-width: 150px; /* Further adjust for very small screens */
+  }
+}
 /*--------------------------------------------------------------
-# Portfolio
+# Portfolio== projects
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
   margin-bottom: 30px;
@@ -934,7 +988,6 @@ transform: translateX(100%);
   opacity: 1;
   bottom: 0;
 }
-
 
 /*--------------------------------------------------------------
 # About
@@ -1075,14 +1128,16 @@ transform: translateX(100%);
 }
 
 .clients img {
-  max-width: 45%;
-  transition: all 0.4s ease-in-out;
+  max-width: 100%;
+  transition: all 0.3s ease-in-out;
   display: inline-block;
-  padding: 15px 0;
+  /* padding-top: 15px; */
+  padding-bottom: 40px;
+  /* gap: 30px; */
 }
 
 .clients img:hover {
-  transform: scale(1.15);
+  transform: scale(1.20);
 }
 
 @media (max-width: 768px) {
@@ -1190,7 +1245,7 @@ transform: translateX(100%);
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 100px;
+  width: 190px;
   border-radius: 50%;
   border: 6px solid rgba(255, 255, 255, 0.15);
   margin: 0 auto;
@@ -1408,6 +1463,87 @@ img :after{
 }
 
 /*--------------------------------------------------------------
+# faculty
+--------------------------------------------------------------*/
+.section-title p{
+  font-size: 20px;
+  width: 70;
+  margin: 15px auto 0 auto;
+  padding-bottom: 4%;
+  font-weight: 600;
+}
+.faculty {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between the cards */
+}
+
+.faculty-card {
+  flex: 1 1 20%; /* Each item takes up 20% of the row by default */
+  max-width: 300px; /* Adjust this value based on your design */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.member {
+  background-color: #f9f9f9; /* Optional: background color for each member card */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
+
+.member-img img {
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fits within its container */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4; /* Maintains the 3:4 aspect ratio */
+}
+
+.member-info h5 {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.member-info span {
+  font-size: 14px;
+  color: #666;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.member-info h6 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.member-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.member-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .col-lg-3, .col-md-6 {
+    flex: 1 1 45%; /* Adjust width for tablet devices */
+  }
+}
+
+@media (max-width: 768px) {
+  .col-lg-3, .col-md-6 {
+    flex: 1 1 100%; /* Full width for mobile devices */
+  }
+}
+
+/*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
 /* Outer Container */
@@ -1557,7 +1693,7 @@ img :after{
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transitions */
   width: 40px; /* Adjust size as needed */
   height: 40px;
-  background-image: url('path_to_linkedin_icon'); /* Replace with the actual path */
+  background-image: url('img/icons/linkedin2.png'); /* Replace with the actual path */
   background-size: cover;
   background-repeat: no-repeat;
   pointer-events: none; /* Ensures clicking the icon doesn't affect the hover state */
@@ -1736,11 +1872,11 @@ img :after{
   gap: 100px; /* Optional: add spacing between the icon boxes */
 }
 
-.col-lg-, .col-md- {
+/* .col-lg-, .col-md- {
   display: flex;
   justify-content: center; 
   /* Center-align the content inside each column */
-}
+ 
 .icon-box {
   flex-grow: 1; /* Allows the icon-box to grow and fill the space evenly */
   max-width: 300px; /* Optional: Set a max width for the icon boxes */
@@ -1931,3 +2067,192 @@ img :after{
   }
 }
   /* ........sponsors....... */  
+  .row--sponsor {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch; /* Adjust this if you want to change the vertical alignment */
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .sponsor-col {
+    flex: 1; /* Allows the columns to grow equally */
+    margin: 0 10px; /* Optional: Add horizontal spacing between columns */
+  }
+  
+  .sponsor-icon-box {
+    text-align: center;
+    background-color: #fff; /* Optional for visual enhancement */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for 3D effect */
+  }
+  
+  .sponsor-icon-box img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .sponsor-icon-box h4 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .sponsor-icon-box p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .row-sponsor {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .sponsor-col {
+      margin-bottom: 20px; /* Optional for spacing on mobile */
+    }
+  }
+  
+
+/* project-section */
+.projects-section {
+  padding: 30px;
+  background-color: #f4f4f4;
+}
+
+.containerss {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+.containerss h2{
+  font-size: 30px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 12px 25px;
+  background: #e7f1fd;
+  color: #106eea;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.project-category {
+  margin-bottom: 60px;
+  padding-top: 20px;
+}
+.project-category h3{
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #106eea;
+  margin-bottom: 10px;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.project-card {
+  flex: 1 1 calc(30% - 40px);
+  max-width: calc(40% - 40px);
+  height: 300px; /* Adjusted height for landscape */
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.project-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-front {
+  background-color: #ffffff;
+}
+
+.card-back {
+  background-color: #333333;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.card-front img {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+  flex: 1;
+  object-fit: cover; /* Ensures image covers the area */
+}
+
+.card-front h4 {
+  margin: 10px 0; /* Margin for spacing */
+  padding: 10px; /* Padding for better spacing */
+  flex-shrink: 0; /* Prevents shrinking */
+  text-align: center; /* Center align text */
+}
+
+.card-back p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+.project-card {
+    flex: 1 1 calc(45% - 30px); /* Adjust card size for smaller screens */
+    max-width: calc(45% - 30px);
+    height: 250px; /* Adjusted height */
+    margin: 10px;
+}
+
+.projects-container {
+    gap: 10px; /* Reduce gap between cards */
+}
+}
+
+/* For mobile screens (phones) */
+@media (max-width: 480px) {
+.project-card {
+    flex: 1 1 100%; /* Full width on mobile */
+    max-width: 100%;
+    height: 220px; /* Further reduced height */
+    margin: 10px 0; /* Smaller margins for mobile */
+}
+
+.card-front h4 {
+    font-size: 16px; /* Smaller font size for mobile */
+}
+
+.card-back p {
+    font-size: 12px; /* Adjust font size for readability */
+}
+
+
+}
