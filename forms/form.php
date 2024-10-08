@@ -13,7 +13,7 @@ if(isset($_POST['btn-send']))
     }
     else
     {
-        $to = 'patelbhavya744@gmail.com';
+        $to = 'bhavyaspatel04@gmail.com';
         $headers = "From: ".$email;
 
         if(mail($to, $subject, $msg, $headers))
